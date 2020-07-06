@@ -39,9 +39,9 @@ public class arrays1 {
                     return arrayInput[i+1];
                 }
             }
-        } else {
-          /*  System.out.println(arrayInput[0]);*/ // тестовая точка
-        }
+        } /*else {
+          *//*  System.out.println(arrayInput[0]);*//* // тестовая точка
+        }*/
         return arrayInput[0];
     }
     /**
