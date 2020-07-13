@@ -6,11 +6,9 @@ public class hanoiAuto {
     public static void main(String[] args) {
         int counter = 1;
         int[][] arrayInt = scannerOutput();
-        // Заполнение массива
-        fillArray(arrayInt);
-        // Вывод в консоль массива
-        printArray(arrayInt);
-        // Перестановка элементов массива
+        fillArray(arrayInt);    // Заполнение массива
+        printArray(arrayInt);   // Вывод в консоль массива
+        // Перестановка элементов НЕЧЕТНОГО массива
         if (arrayInt.length%2 == 1){
             do{
                 swapAuto(arrayInt,1,3);
@@ -32,7 +30,7 @@ public class hanoiAuto {
                 printArray(arrayInt);
             } while (arrayInt[0][2] != 1);
             System.out.println("Башня собрана !");
-        } else {
+        } else { // Перестановка элементов ЧЕТНОГО массива
             do{
                 swapAuto(arrayInt,1,2);
                 System.out.println("#" + counter++);
@@ -55,7 +53,10 @@ public class hanoiAuto {
             System.out.println("Башня собрана !");
         }
     }
-
+    /**
+     * Метод создает двумерный целочисленный массив с указанным пользователем размером
+     * @return двумерный целочисленный массив
+     */
     static int[][] scannerOutput(){
         Scanner scanner = new Scanner(System.in);
         int temp;
@@ -81,6 +82,10 @@ public class hanoiAuto {
         }
         return arrayTwoDimensional;
     }
+    /**
+     * Метод выводит в консоль двумерный массив
+     * @param arrayTwoDimensional двумерный целочисленный массив
+     */
     static void printArray(int[][] arrayTwoDimensional){
         for (int i = 0; i < arrayTwoDimensional.length; i++) {
             for (int j = 0; j < arrayTwoDimensional[i].length; j++) {
@@ -93,7 +98,6 @@ public class hanoiAuto {
             System.out.println();
         }
     }
-
     /**
      * Метод поиска ячейки в двумерном массиве с заданным значением
      * @param arrayTwoDimensional двумерный целочисленный массив
@@ -111,6 +115,12 @@ public class hanoiAuto {
         }
         return temp;
     }
+    /**
+     * Метод поиска ячейки со значением 0 в заданном двумерном массиве в заданном столбце. Поиск начинается с конца массива
+     * @param arrayTwoDimensional двумерный целочисленный массив
+     * @param column номер стержня в массиве (на единицу меньше чем столбец массива)
+     * @return номер строки в которой находится цифра 0
+     */
     static int findCell0(int[][] arrayTwoDimensional, int column){
         int line;
         for (line = arrayTwoDimensional.length-1; line > -1; line--) {
@@ -120,11 +130,10 @@ public class hanoiAuto {
         }
         return line;
     }
-
     /**
      * Метод поиска числа находящегося на вершине стержня в указанном стержне (столбце)
-     * @param arrayTwoDimensional двумерный массив
-     * @param column стержень (столбец) в котором проводится паиск
+     * @param arrayTwoDimensional двумерный цклочисленный массив
+     * @param column стержень (столбец) в котором проводится поиск
      * @return возвращает число находящееся на вершине стержня
      */
     static int findNumber(int[][] arrayTwoDimensional, int column){
@@ -137,38 +146,25 @@ public class hanoiAuto {
         }
         return number;
     }
-
+    /**
+     * Метод переставляет значения между ячейками массива принадлежащими введенным столбцам
+     * @param arrayTwoDimensional двумерный целочисленный массив
+     * @param columnOut столбец 1 массива
+     * @param columnIn столбец 2 массива
+     * @return двумерный целочисленный массив с переставленными ячейками
+     */
     static int[][] swapAuto(int[][] arrayTwoDimensional, int columnOut, int columnIn){
-        // определить число (номер строки) которое находится на вершине стержня columnOut (первое значение после нуля)
+        // определить число (номер строки) которое находится на вершине стержня columnOut, columnIn (первое значение после нуля)
         int tempRing = findNumber(arrayTwoDimensional,columnOut);
         int numberIn = findNumber(arrayTwoDimensional,columnIn);
-        if (tempRing > numberIn && numberIn != 0){
-            int tmp = tempRing;
+        // сравнить какое число больше и переопределить стержень и кольцо, для перестановки меньшего на большее
+        if ((tempRing > numberIn && numberIn != 0) || (tempRing < numberIn && tempRing == 0)){
             tempRing = numberIn;
-            numberIn = tmp;
-            tmp = columnOut;
-            columnOut = columnIn;
-            columnIn = tmp;
-        }
-        if (tempRing < numberIn && tempRing == 0){
-            int tmp = tempRing;
-            tempRing = numberIn;
-            numberIn = tmp;
-            tmp = columnOut;
-            columnOut = columnIn;
-            columnIn = tmp;
+            columnIn = columnOut;
         }
         int[] arrayTemp1 = findCell(arrayTwoDimensional, tempRing);
-
-        // если это не крайнее кольцо в стержне и над ним еще есть кольцо, то окончание метода
-        if (arrayTemp1[0] != 0 && arrayTwoDimensional[arrayTemp1[0]-1][arrayTemp1[1]] != 0){
-            System.out.println("Так переместить нельзя. Попробуйте снова.");
-            return arrayTwoDimensional;
-        }
         // определить номер строки с нулевым значением, указанного стержня, куда можно переместить элемент
-        int line = 0;
-        line = findCell0(arrayTwoDimensional,columnIn); // номер строки со значением 0
-
+        int line = findCell0(arrayTwoDimensional,columnIn); // номер строки со значением в ячейке 0
         System.out.println("Переставляется кольцо - " + tempRing + " на стержень - " + columnIn);
         // если ячейка со значением 0 у стержня находится в самом низу или под пустой ячейкой находится большее число
         if ((line == arrayTwoDimensional.length-1 && arrayTwoDimensional[line][columnIn-1] == 0) || (arrayTwoDimensional[line+1][columnIn-1] > tempRing)){
@@ -176,47 +172,6 @@ public class hanoiAuto {
             arrayTwoDimensional[line][columnIn-1] = arrayTwoDimensional[arrayTemp1[0]][arrayTemp1[1]];
             arrayTwoDimensional[arrayTemp1[0]][arrayTemp1[1]] = temp;
             return arrayTwoDimensional;
-        }else {
-            System.out.println("Так переместить нельзя. Попробуйте снова.");
-        }
-        return arrayTwoDimensional;
-    }
-
-    static int[][] swapManual(int[][] arrayTwoDimensional){
-        Scanner scannerRing = new Scanner(System.in);
-        int tempRing;
-        System.out.print("Введите  номер кольца: ");
-        tempRing = scannerRing.nextInt();
-        if (tempRing > arrayTwoDimensional.length){
-            System.out.println("Такого кольца нет. Введите снова.");
-            return arrayTwoDimensional;
-        }
-        int tempRod;
-        Scanner scannerRod = new Scanner(System.in);
-        System.out.print("Введите номер стержня: ");
-        tempRod = scannerRod.nextInt();
-        if (tempRod > arrayTwoDimensional[0].length){
-            System.out.println("Такого стержня нет. Введите снова.");
-            return arrayTwoDimensional;
-        }
-        // определить ячейку в которой записан номер кольца
-        int[] arrayTemp1 = findCell(arrayTwoDimensional, tempRing);
-        // если это не крайнее кольцо в стержне и над ним еще есть кольцо, то окончание метода
-        if (arrayTemp1[0] != 0 && arrayTwoDimensional[arrayTemp1[0]-1][arrayTemp1[1]] != 0){
-            System.out.println("Так переместить нельзя. Попробуйте снова.");
-            return arrayTwoDimensional;
-        }
-        // определить номер строки с нулевым значением, указанного стержня, куда можно переместить элемент
-        int line = 0;
-        line = findCell0(arrayTwoDimensional,tempRod); // номер строки со значением 0
-        // если ячейка со значением 0 у стержня находится в самом низу или под пустой ячейкой находится большее число
-        if ((line == arrayTwoDimensional.length-1 && arrayTwoDimensional[line][tempRod-1] == 0) || (arrayTwoDimensional[line+1][tempRod-1] > tempRing)){
-            int temp = arrayTwoDimensional[line][tempRod-1];
-            arrayTwoDimensional[line][tempRod-1] = arrayTwoDimensional[arrayTemp1[0]][arrayTemp1[1]];
-            arrayTwoDimensional[arrayTemp1[0]][arrayTemp1[1]] = temp;
-            return arrayTwoDimensional;
-        }else {
-                System.out.println("Так переместить нельзя. Попробуйте снова.");
         }
         return arrayTwoDimensional;
     }
