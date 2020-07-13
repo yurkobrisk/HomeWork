@@ -5,11 +5,8 @@ import java.util.Scanner;
 public class hanoiManual {
     public static void main(String[] args) {
         int[][] arrayInt = scannerOutput();
-        // Заполнение массива
-        fillArray(arrayInt);
-        // Вывод в консоль массива
-        System.out.println("Массив после обработки метода: ");
-        printArray(arrayInt);
+        fillArray(arrayInt);    // Заполнение массива
+        printArray(arrayInt);   // Вывод в консоль массива
         // Перестановка элементов массива
         do{
             swapManual(arrayInt);
@@ -55,7 +52,6 @@ public class hanoiManual {
             System.out.println();
         }
     }
-
     /**
      * Метод поиска ячейки в двумерном массиве с заданным значением
      * @param arrayTwoDimensional двумерный целочисленный массив
@@ -88,7 +84,7 @@ public class hanoiManual {
         int tempRing;
         System.out.print("Введите  номер кольца: ");
         tempRing = scannerRing.nextInt();
-        if (tempRing > arrayTwoDimensional.length){
+        if (tempRing > arrayTwoDimensional.length || tempRing < 1){
             System.out.println("Такого кольца нет. Введите снова.");
             return arrayTwoDimensional;
         }
@@ -96,7 +92,7 @@ public class hanoiManual {
         Scanner scannerRod = new Scanner(System.in);
         System.out.print("Введите номер стержня: ");
         tempRod = scannerRod.nextInt();
-        if (tempRod > arrayTwoDimensional[0].length){
+        if (tempRod > arrayTwoDimensional[0].length || tempRod < 1){
             System.out.println("Такого стержня нет. Введите снова.");
             return arrayTwoDimensional;
         }
