@@ -9,7 +9,7 @@ public class CalculatorWithMathExtends extends CalculatorWithOperator {
      * @return результат возведения в степень -> целое число
      */
     @Override
-    public double exponent(double i1, int i2){
+    public double pow(double i1, int i2){
         return Math.pow(i1, i2);
     }
 

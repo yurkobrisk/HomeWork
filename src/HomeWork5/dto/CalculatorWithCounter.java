@@ -36,18 +36,18 @@ public class CalculatorWithCounter {
      * @param i2 число 2
      * @return результат деления -> число
      */
-    public double division(double i1, double i2){
+    public double div(double i1, double i2){
         if (calc1 != null){
             counter++;
-            return calc1.division(i1, i2);
+            return calc1.div(i1, i2);
         } else {
             if (calc2 != null){
                 counter++;
-                return calc2.division(i1, i2);
+                return calc2.div(i1, i2);
             }
         }
         counter++;
-        return calc3.division(i1, i2);
+        return calc3.div(i1, i2);
     }
 
     /**
@@ -76,18 +76,18 @@ public class CalculatorWithCounter {
      * @param i2 число 2
      * @return результат сложения -> число
      */
-    public double addition(double i1, double i2){
+    public double plus(double i1, double i2){
         if (calc1 != null){
             counter++;
-            return calc1.addition(i1, i2);
+            return calc1.plus(i1, i2);
         } else {
             if (calc2 != null){
                 counter++;
-                return calc2.addition(i1, i2);
+                return calc2.plus(i1, i2);
             }
         }
         counter++;
-        return calc3.addition(i1, i2);
+        return calc3.plus(i1, i2);
     }
 
     /**
@@ -96,18 +96,18 @@ public class CalculatorWithCounter {
      * @param i2 число 2
      * @return результат вычитания -> число
      */
-    public double subtraction(double i1, double i2){
+    public double minus(double i1, double i2){
         if (calc1 != null){
             counter++;
-            return calc1.subtraction(i1, i2);
+            return calc1.minus(i1, i2);
         } else {
             if (calc2 != null){
                 counter++;
-                return calc2.subtraction(i1, i2);
+                return calc2.minus(i1, i2);
             }
         }
         counter++;
-        return calc3.subtraction(i1, i2);
+        return calc3.minus(i1, i2);
     }
 
     /**
@@ -116,18 +116,18 @@ public class CalculatorWithCounter {
      * @param i2 степень числа - целое число
      * @return результат возведения в степень -> целое число
      */
-    public double exponent(double i1, int i2){
+    public double pow(double i1, int i2){
         if (calc1 != null){
             counter++;
-            return calc1.exponent(i1, i2);
+            return calc1.pow(i1, i2);
         } else {
             if (calc2 != null){
                 counter++;
-                return calc2.exponent(i1, i2);
+                return calc2.pow(i1, i2);
             }
         }
         counter++;
-        return calc3.exponent(i1, i2);
+        return calc3.pow(i1, i2);
     }
 
     /**

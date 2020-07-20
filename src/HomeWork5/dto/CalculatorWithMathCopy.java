@@ -8,7 +8,7 @@ public class CalculatorWithMathCopy {
      * @param i2 число 2
      * @return результат деления -> число
      */
-    public double division(double i1, double i2){
+    public double div(double i1, double i2){
         return i1 / i2;
     }
 
@@ -28,7 +28,7 @@ public class CalculatorWithMathCopy {
      * @param i2 число 2
      * @return результат сложения -> число
      */
-    public double addition(double i1, double i2){
+    public double plus(double i1, double i2){
         //System.out.println("Метод вызываемый из CalculatorWithMathCopy");
         return i1 + i2;
     }
@@ -39,7 +39,7 @@ public class CalculatorWithMathCopy {
      * @param i2 число 2
      * @return результат вычитания -> число
      */
-    public double subtraction(double i1, double i2){
+    public double minus(double i1, double i2){
         return i1 - i2;
     }
 
@@ -49,7 +49,7 @@ public class CalculatorWithMathCopy {
      * @param i2 степень числа - целое число
      * @return результат возведения в степень -> целое число
      */
-    public double exponent(double i1, int i2){
+    public double pow(double i1, int i2){
         return Math.pow(i1, i2);
     }
 
