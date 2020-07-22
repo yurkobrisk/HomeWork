@@ -67,5 +67,12 @@ public class CalcMain {
         System.out.println("Количество методов выполненных объектом: " + calc7.getCountOperation());
         System.out.println(calc7.fromMemory());
 
+        // ----------------- CalculatorStringExpression
+
+        CalculatorStringExpression calc8 = new CalculatorStringExpression();
+
+        System.out.println(calc8.parseString(new StringBuilder("1\\71\\10")));
+
+
     }
 }
