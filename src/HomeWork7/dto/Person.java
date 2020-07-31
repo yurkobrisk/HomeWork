@@ -1,7 +1,7 @@
 package HomeWork7.dto;
 
 public class Person {
-    private String nick; // псевдоним пользователя
+    private String nick; // псевдоним пользователя (от 3 до 20 символов)
     private String password; // пароль (от 5 до 10 символов)
 
     public Person(String nick, String password) {
@@ -13,15 +13,15 @@ public class Person {
         return nick;
     }
 
-    public void setNick(String nick) {
-        this.nick = nick;
-    }
-
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    @Override
+    public String toString() {
+        return "{" +
+                "nick='" + nick + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }

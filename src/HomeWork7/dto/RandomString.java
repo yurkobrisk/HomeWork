@@ -37,7 +37,7 @@ public class RandomString {
      */
     public static int randomInt(int min, int max){
         Random random = new Random();
-        int result = random.nextInt((max-min)) + 1;
+        int result = random.nextInt((max+1-min)); // максимальное значение нужно увеличивать на 1, иначе не попадает в диапазон
         return result += min;
     }
 }
