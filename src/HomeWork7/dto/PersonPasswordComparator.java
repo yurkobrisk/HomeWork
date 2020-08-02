@@ -4,11 +4,11 @@ import java.util.Comparator;
 
 public class PersonPasswordComparator implements Comparator<Person> {
 
-    // сравнивать длину пароля
+    // сравнивать длину пароля пользователей
 
     @Override
-    public int compare(Person passPerson1, Person passPerson2) {
+    public int compare(Person person1, Person person2) {
 
-        return passPerson1.getPassword().length()-passPerson2.getPassword().length();
+        return person1.getPassword().length()-person2.getPassword().length();
     }
 }
