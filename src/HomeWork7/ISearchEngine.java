@@ -12,5 +12,5 @@ public interface ISearchEngine {
      * @param word слово которое нужно найти
      * @return количество повторений искомого слова
      */
-    public int search(String book, String word);
+    int search(String book, String word);
 }

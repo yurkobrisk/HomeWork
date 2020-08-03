@@ -8,8 +8,9 @@ public class EasySearch implements ISearchEngine {
 
     @Override
     public int search(String book, String word) {
+        book = book.toLowerCase();
         int count = 0;
-        int flag = 0;
+        int flag = 0; // маркер конца строки
         if (book.startsWith(word)){
             count ++;
         }

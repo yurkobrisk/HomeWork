@@ -1,5 +1,8 @@
 package HomeWork7;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class RegExSearch implements ISearchEngine {
 
 //  4*. Написать класс RegExSearch реализующий интерфейс ISearchEngine.
@@ -7,6 +10,12 @@ public class RegExSearch implements ISearchEngine {
 
     @Override
     public int search(String book, String word) {
-        return 0;
+        int counter = 0; // счетчик совпадений слова word в book
+        Pattern pattern = Pattern.compile(word);
+        Matcher matcher = pattern.matcher(book.toLowerCase());
+        while (matcher.find()){
+            counter++;
+        }
+        return counter;
     }
 }
