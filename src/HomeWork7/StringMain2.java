@@ -4,8 +4,7 @@ public class StringMain2 {
     public static void main(String[] args) {
 
 //        1. считать сохранённый файл и сохранить результат счтитывания в переменную типа типа String
-        String stringIn = "";
-        stringIn = StringMain1.readAllBytesJava7("Война и мир_книга.txt"); // записать в переменную содержимое текстового файла
+        String stringIn = StringMain1.readAllBytesJava7("Война и мир_книга.txt"); // записать в переменную содержимое текстового файла
 //        System.out.println(stringIn); // вывод в консоль всей строки
 //        System.out.println(stringIn.substring(0, 1000)); // вывод в консоль подстроки от 0 до 1000 символа
 
