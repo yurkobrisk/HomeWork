@@ -84,23 +84,26 @@ public class StringMain1 {
     }
 
     /**
-     * Метод заменяет знаки пунктуации на пробелы
+     * Метод заменяет знаки пунктуации на пробелы и замена повторяющихся пробелов друг за другом на одина пробел
      * @param stringIn строка
      */
     public static String deletePunctuation(String stringIn){
-        stringIn = stringIn.replace("\n", "");
-        stringIn = stringIn.replace("\r", "");
-        stringIn = stringIn.replace(".", "");
-        stringIn = stringIn.replace(":", "");
-        stringIn = stringIn.replace(";", "");
-        stringIn = stringIn.replace("=", "");
-        stringIn = stringIn.replace(",", "");
-        stringIn = stringIn.replace("\"", "");
-        stringIn = stringIn.replace("-", "");
-        stringIn = stringIn.replace("!", "");
-        stringIn = stringIn.replace("?", "");
-        stringIn = stringIn.replace("\\", "");
-        stringIn = stringIn.replace("(", "");
-        return stringIn = stringIn.replace(")", "");
+        stringIn = stringIn.replace("\n", " ");
+        stringIn = stringIn.replace("\r", " ");
+        stringIn = stringIn.replace("\r\n", " ");
+        stringIn = stringIn.replace(".", " ");
+        stringIn = stringIn.replace(":", " ");
+        stringIn = stringIn.replace(";", " ");
+        stringIn = stringIn.replace("=", " ");
+        stringIn = stringIn.replace(",", " ");
+        stringIn = stringIn.replace("\"", " ");
+        stringIn = stringIn.replace("-", " ");
+        stringIn = stringIn.replace("!", " ");
+        stringIn = stringIn.replace("?", " ");
+        stringIn = stringIn.replace("\\", " ");
+        stringIn = stringIn.replace("(", " ");
+        stringIn = stringIn.replace(")", " ");
+        return stringIn = stringIn.replaceAll("\\s+", " ");
+
     }
 }
