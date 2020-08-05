@@ -19,11 +19,11 @@ public class ShowInfo<K, V> {
         System.out.println("Топ 20 слов в книге Война и мир:");
 
         for (Map.Entry<K, V> map : linkedHashMap.entrySet()){
-            counter ++;
             K key = map.getKey();
             V value = map.getValue();
             System.out.println(" " + key + " - " + value + " раз");
-            if (counter == 20){
+            counter --;
+            if (counter < 0){
                 return;
             }
         }
