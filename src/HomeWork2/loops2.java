@@ -1,6 +1,6 @@
 package HomeWork2;
 
-public class loops2 {
+public class Loops2 {
     /**
      * Multiplication (example in 5 out 1*2*3*4*5=120)
      * @param number Number multipliers

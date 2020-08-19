@@ -1,6 +1,6 @@
 package HomeWork2;
 
-public class arrays3 {
+public class Arrays3 {
     public static void main(String[] args) {
         int[] arr = {8, 3, 4, 5, 0, 4, -7, 9, 3, -2, 6};
 
@@ -17,6 +17,12 @@ public class arrays3 {
             System.out.print(i + " ");
         }
     }
+
+    /**
+     * Метод который сортирует массив целых чисел
+     * @param arrIn не сортированный массив целых чисел
+     * @return отсортированный массив целых чисел
+     */
     static int[] sortArray(int[] arrIn){
         int iOut = 0;
         while (iOut != arrIn.length-1) { //внешний цикл выполняется последовательно до уже переставленного минимального элемента массива

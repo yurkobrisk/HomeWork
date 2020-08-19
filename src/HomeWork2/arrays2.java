@@ -2,7 +2,7 @@ package HomeWork2;
 
 import java.util.Scanner;
 
-public class arrays2 {
+public class Arrays2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Введите элементы целочисленного массива через пробел: ");
@@ -40,6 +40,12 @@ public class arrays2 {
             System.out.print(i + " ");
         }
     }
+
+    /**
+     * Метод который сортирует массив из целых чисел
+     * @param arrIn не сортированный массив
+     * @return отсортированный массив
+     */
     static int[] sortArray(int[] arrIn){
         int iOut = 0;
         while (iOut != arrIn.length-1) { //внешний цикл выполняется последовательно до уже переставленного минимального элемента массива

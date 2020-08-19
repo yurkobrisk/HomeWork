@@ -1,6 +1,6 @@
 package HomeWork2;
 
-public class loops1 {
+public class Loops1 {
     public static void main(String[] args) {
         tableMultiplication();
     }

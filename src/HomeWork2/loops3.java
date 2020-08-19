@@ -1,6 +1,6 @@
 package HomeWork2;
 
-public class loops3 {
+public class Loops3 {
     public static void main(String[] args) {
         long number = Long.parseLong(args[0]);
         multiplication(number);
