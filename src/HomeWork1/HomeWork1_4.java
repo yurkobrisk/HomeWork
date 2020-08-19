@@ -46,6 +46,7 @@ public class HomeWork1_4 {
                 break;
             }
         }
+        scannerWeekday.close();
 
         Scanner scannerVacation = new Scanner(System.in);
         while (true){
@@ -59,6 +60,7 @@ public class HomeWork1_4 {
                 break;
             }
         }
+        scannerVacation.close();
 
         if (sleepIn(weekday, vacation)){
             System.out.println("Можно спать дальше");
