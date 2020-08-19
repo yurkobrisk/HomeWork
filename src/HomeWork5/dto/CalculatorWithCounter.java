@@ -37,17 +37,16 @@ public class CalculatorWithCounter {
      * @return результат деления -> число
      */
     public double div(double i1, double i2){
+        double result = 0;
         if (calc1 != null){
-            counter++;
-            return calc1.div(i1, i2);
-        } else {
-            if (calc2 != null){
-                counter++;
-                return calc2.div(i1, i2);
+            result = calc1.div(i1, i2);
+        } else if (calc2 != null){
+            result = calc2.div(i1, i2);
+        } else if (calc3 != null){
+            result = calc3.div(i1, i2);
             }
-        }
         counter++;
-        return calc3.div(i1, i2);
+        return result;
     }
 
     /**
@@ -57,17 +56,16 @@ public class CalculatorWithCounter {
      * @return результат умножения -> число
      */
     public double multiplication(double i1, double i2){
+        double result = 0;
         if (calc1 != null){
-            counter++;
-            return calc1.multiplication(i1, i2);
-        } else {
-            if (calc2 != null){
-                counter++;
-                return calc2.multiplication(i1, i2);
-            }
+            result = calc1.multiplication(i1, i2);
+        } else if (calc2 != null){
+            result = calc2.multiplication(i1, i2);
+        } else if (calc3 != null){
+            result = calc3.multiplication(i1, i2);
         }
         counter++;
-        return calc3.multiplication(i1, i2);
+        return result;
     }
 
     /**
@@ -77,17 +75,16 @@ public class CalculatorWithCounter {
      * @return результат сложения -> число
      */
     public double plus(double i1, double i2){
+        double result = 0;
         if (calc1 != null){
-            counter++;
-            return calc1.plus(i1, i2);
-        } else {
-            if (calc2 != null){
-                counter++;
-                return calc2.plus(i1, i2);
-            }
+            result = calc1.plus(i1, i2);
+        } else if (calc2 != null){
+            result = calc2.plus(i1, i2);
+        } else if (calc3 != null){
+            result = calc3.plus(i1, i2);
         }
         counter++;
-        return calc3.plus(i1, i2);
+        return result;
     }
 
     /**
@@ -97,17 +94,16 @@ public class CalculatorWithCounter {
      * @return результат вычитания -> число
      */
     public double minus(double i1, double i2){
+        double result = 0;
         if (calc1 != null){
-            counter++;
-            return calc1.minus(i1, i2);
-        } else {
-            if (calc2 != null){
-                counter++;
-                return calc2.minus(i1, i2);
-            }
+            result = calc1.minus(i1, i2);
+        } else if (calc2 != null){
+            result = calc2.minus(i1, i2);
+        } else if (calc3 != null){
+            result = calc3.minus(i1, i2);
         }
         counter++;
-        return calc3.minus(i1, i2);
+        return result;
     }
 
     /**
@@ -117,17 +113,16 @@ public class CalculatorWithCounter {
      * @return результат возведения в степень -> целое число
      */
     public double pow(double i1, int i2){
+        double result = 0;
         if (calc1 != null){
-            counter++;
-            return calc1.pow(i1, i2);
-        } else {
-            if (calc2 != null){
-                counter++;
-                return calc2.pow(i1, i2);
-            }
+            result = calc1.pow(i1, i2);
+        } else if (calc2 != null){
+            result = calc2.pow(i1, i2);
+        } else if (calc3 != null){
+            result = calc3.pow(i1, i2);
         }
         counter++;
-        return calc3.pow(i1, i2);
+        return result;
     }
 
     /**
@@ -136,17 +131,16 @@ public class CalculatorWithCounter {
      * @return результат -> абсолютный модуль числа -> положительное число
      */
     public double abs(double i1){
+        double result = 0;
         if (calc1 != null){
-            counter++;
-            return calc1.abs(i1);
-        } else {
-            if (calc2 != null){
-                counter++;
-                return calc2.abs(i1);
-            }
+            result = calc1.abs(i1);
+        } else if (calc2 != null){
+            result = calc2.abs(i1);
+        } else if (calc3 != null){
+            result = calc3.abs(i1);
         }
         counter++;
-        return calc3.abs(i1);
+        return result;
     }
 
     /**
@@ -155,16 +149,15 @@ public class CalculatorWithCounter {
      * @return результат вычисления квадратного корня из числа -> число
      */
     public double sqrt(double i1){
+        double result = 0;
         if (calc1 != null){
-            counter++;
-            return calc1.sqrt(i1);
-        } else {
-            if (calc2 != null){
-                counter++;
-                return calc2.sqrt(i1);
-            }
+            result = calc1.sqrt(i1);
+        } else if (calc2 != null){
+            result = calc2.sqrt(i1);
+        } else if (calc3 != null){
+            result = calc3.sqrt(i1);
         }
         counter++;
-        return calc3.sqrt(i1);
+        return result;
     }
 }
