@@ -1,6 +1,6 @@
 package HomeWork3;
 
-public class arrays1 {
+public class Arrays1 {
     public static void main(String[] args) {
 
         int[] arr1 = {20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5};

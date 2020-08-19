@@ -2,7 +2,7 @@ package HomeWork3;
 
 import java.util.Scanner;
 
-public class obj1 {
+public class Obj1 {
     public static void main(String[] args) {
         Color color1 = new Color(3);
         System.out.println("Номер цвета: " + color1.getNumber());
