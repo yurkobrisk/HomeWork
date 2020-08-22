@@ -10,6 +10,8 @@ public class Test {
         printRates(new BelarusBankLoader());
         System.out.println("Курс БПС Банка: ");
         printRates(new BPSLoader());
+        System.out.println("Курс БелАгроПром Банка: ");
+        printRates(new BAPBLoader());
     }
 
     public static void printRates(SiteLoader loader){
