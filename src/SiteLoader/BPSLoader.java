@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 /**
  * Загрузка курса с сайта Беларус Банка
  */
-public class BelAgroLoader extends SiteLoader {
+public class BPSLoader extends SiteLoader {
 
     /**
      * Метод для запуска загрузки курса валют
@@ -36,17 +36,18 @@ public class BelAgroLoader extends SiteLoader {
         while (matcher.find()){
             stringList.add(matcher.start());    // записать индекс с которого начинается строка содержащая курс валюты
         }
-        // формирование строки с курсом валюты
+        // формирование строки с курсом валюты и извлечение из нее курса продажи
         for (Integer integer : stringList) {
             stringCurrency = content.substring(integer, integer + 104);
-            if (stringCurrency.contains(currencyName.toString())){
-                System.out.println(content.substring(integer, integer + 104));
-                break;
+            if (stringCurrency.contains(currencyName.toString())){  // если строка содержит имя искомой валюты
+                // создать новую строку и заменить в ней запятую на точку если имеется (а она есть)
+                String filteredString = content.substring(integer, integer + 104).replace(',', '.');
+                int indexCurrency = filteredString.indexOf("currency") + 35; // поиск индекса начала курса для валюты
+                // преобразовать подстроку с курсом в число и вернуть в методе
+                return result = Double.parseDouble(filteredString.substring(indexCurrency, indexCurrency + 6));
             }
         }
         // формировать строку class="currency"> ... и из нее считать курс валюты
-
-//        int index = content.indexOf("\"" + currencyName.toString() + "_out\"");  // поиск подстроки с курсом валюты
-        return result/*Double.parseDouble(content.substring(index + 11, index + 17))*/;
+        return result;
     }
 }
